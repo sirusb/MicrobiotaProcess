@@ -363,7 +363,7 @@ setMethod("mp_cal_abundance", signature(.data="MPSE"),
         newabun <- paste0(rlang::as_name(.abundance), "By", paste0(byID2, collapse="And"))
         bygroup <- newabun
     }
-
+    da %<>% as_tibble()
     #da %<>% dplyr::group_by(across(!!byID)) %>%
     #    dplyr::mutate(across(!!.abundance, sum, .names=Totalnm)) %>%
     #    dplyr::group_by(!!feature, .add = TRUE) #%>%
